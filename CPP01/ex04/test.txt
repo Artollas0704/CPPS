@@ -1,0 +1,8 @@
+Hello world, hello everyone!
+This is a test file with hello repeated.
+hello hello hello
+Let me replace hello with something else.
+The word hello appears many times here.
+hello at the start and at the end hello
+Multiple words: hello world hello
+Final line with hello in it.
