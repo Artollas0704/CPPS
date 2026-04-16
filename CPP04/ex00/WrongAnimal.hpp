@@ -25,7 +25,7 @@ class WrongAnimal
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal& to_copy);
 		WrongAnimal& operator=(const WrongAnimal& to_copy);
-		 ~WrongAnimal();
+		virtual ~WrongAnimal();
 		void makeSound() const;
 		std::string getType() const;
 };

@@ -6,7 +6,7 @@
 /*   By: aralves- <aralves-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 18:53:38 by aralves-          #+#    #+#             */
-/*   Updated: 2026/04/14 21:45:15 by aralves-         ###   ########.fr       */
+/*   Updated: 2026/04/16 18:47:07 by aralves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,39 @@
 
 int main(void) 
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongI = new WrongCat();
-	std::cout << wrongI->getType() << " " << std::endl;
-	wrongI->makeSound();
-	wrongMeta->makeSound();
-	delete wrongMeta;
-	delete wrongI;
+	const Animal* animals[10];
+	
+	for (int i = 0; i < 5; i++)
+	{
+		animals[i] = new Dog();
+		std::cout << std::endl;
+	}
+	for (int i = 5; i < 10; i++)
+	{
+		animals[i] = new Cat();
+		std::cout << std::endl;
+	}
+	
+	std::cout << "===== TESTING SOUNDS =====" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << animals[i]->getType() << ": ";
+		animals[i]->makeSound();
+	}
+	
+	std::cout << std::endl << "===== DELETING ALL ANIMALS =====" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		delete animals[i];
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	Dog originalDog;
+	
+	Dog copyDog = originalDog;
+
+	Dog anotherCopy;
+	anotherCopy = originalDog; 
+	
 	return (0);
 }
